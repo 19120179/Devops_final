@@ -21,7 +21,7 @@ node {
         }
         catch (exe){}
         finally {
-            app.run("--rm --name devops_demo -p 8081:3000")
+            app.run("--rm --name devops_demo -p 8086:3000")
         }
 	}
 	
