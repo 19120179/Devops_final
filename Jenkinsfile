@@ -15,15 +15,19 @@ node {
 		}
     }
 
-	stage('Deploy'){
-        try {
+	stage('Deploy')
+	{
+        try 
+		{
             sh "docker kill devops_demo"
         }
+
         catch (exe){}
-        finally {
+
+        finally 
+		{
             app.run("--rm --name devops_demo -p 8086:3000")
         }
 	}
-	
 	
 }
