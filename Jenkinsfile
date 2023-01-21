@@ -5,7 +5,7 @@ node {
 	}
 
 	stage('Build') {
-		app = docker.build("19120179/devops")
+		app = docker.build("19120179/devops_demo")
 	}
 
 	stage('Push') {
@@ -17,11 +17,11 @@ node {
 
 	stage('Deploy'){
         try {
-            sh "docker kill devops"
+            sh "docker kill devops_demo"
         }
         catch (exe){}
         finally {
-            app.run("--rm --name devops -p 8081:3000")
+            app.run("--rm --name devops_demo -p 8081:3000")
         }
 	}
 	
